@@ -1,0 +1,14 @@
+docker run -it --rm \
+-v /home/endis/PycharmProjects/posii_2/Compose/app/:/app/ \
+-e DISPLAY=$DISPLAY \
+-v /tmp/.X11-unix:/tmp/.X11-unix \
+pixhub/docker_python python3 button.py
+
+
+docker run --rm -ti -v /tmp/.X11-unix:/tmp/.X11-unix \
+                    -v /home/endis/PycharmProjects/posii_2/Compose/app/:/app \
+                    -e DISPLAY=$DISPLAY \
+                    -u python bin/bash
+
+
+

@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+ back:
+  image: empione/servak 
+  volumes:
+   - /home/endis/PycharmProjects/posii_2/Compose/total_dir/:/home/endis/PycharmProjects/posii_2/Compose/total_dir/
+  ports:
+   - 9090:9090
+  command: python3 mainapp.py
+
+ app:
+  image: empione/neservak
+  volumes:
+   - /home/endis/PycharmProjects/posii_2/Compose/total_dir/:/home/endis/PycharmProjects/posii_2/Compose/total_dir/
+  network_mode: host
+  command: python3 button.py
+  
+  
+  
+ 

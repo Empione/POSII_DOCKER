@@ -1,0 +1,24 @@
+{
+docker run -it \
+--network="host" \
+-v /home/endis/PycharmProjects/posii_2/Compose/app/:/app/ \
+-v /tmp/.X11-unix:/tmp/.X11-unix \
+-e DISPLAY=$DISPLAY \
+-v /home/endis/PycharmProjects/posii_2/Compose/total_dir/:/home/endis/PycharmProjects/posii_2/Compose/total_dir/ \
+pixhub/docker_python3 button.py
+
+
+docker run -it \
+-v /home/endis/PycharmProjects/posii_2/Compose/back/:/back/ \
+-p 9090:9090 \
+-v /home/endis/PycharmProjects/posii_2/Compose/total_dir/:/home/endis/PycharmProjects/posii_2/Compose/total_dir/ \
+empione/server:v2 python3 mainapp.py
+
+}
+
+
+
+
+
+
+
